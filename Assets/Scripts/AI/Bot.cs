@@ -5,6 +5,8 @@ using UnityEngine.AI;
 public class BotMovement : MonoBehaviour
 {
     private NavMeshAgent meshAgent;
+    [SerializeField]
+    private Transform target;
     private void Awake()
     {
         meshAgent = GetComponent<NavMeshAgent>();
@@ -12,6 +14,6 @@ public class BotMovement : MonoBehaviour
 
     private void Update()
     {
-        meshAgent.SetDestination(new Vector3(-3, 1.5f, 0));
+        meshAgent.SetDestination(target.position);
     }
 }
